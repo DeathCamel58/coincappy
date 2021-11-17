@@ -107,6 +107,34 @@ class CoinMarketCap():
 
         return self._query(apiversion, urlpath, kwargs.items())
 
+    def crypto_ohlcv(self, **kwargs):
+        """
+        Returns a paginated list of all active cryptocurrencies with latest market data.
+
+        GET /cryptocurrency/ohlcv/latest
+
+        Optional parameters:
+        https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyOhlcvLatest
+        """
+        apiversion = 'v1'
+        urlpath = '/cryptocurrency/ohlcv/latest'
+
+        return self._query(apiversion, urlpath, kwargs.items())
+
+    def crypto_ohlcv_historical(self, **kwargs):
+        """
+        Returns a paginated list of all active cryptocurrencies with latest market data.
+
+        GET /cryptocurrency/ohlcv/historical
+
+        Optional parameters:
+        https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyOhlcvHistorical
+        """
+        apiversion = 'v1'
+        urlpath = '/cryptocurrency/ohlcv/historical'
+
+        return self._query(apiversion, urlpath, kwargs.items())
+
     def crypto_quotes(self, **kwargs):
         """
         Returns the latest market quote for 1 or more cryptocurrencies.
